@@ -71,7 +71,7 @@ public class Page {
         } while(run);
 
     }
-
+    //로그인
     private static void goToLogin() {
         System.out.print("아이디를 입력하세요 : ");
         inputId = scanner.next();
@@ -99,6 +99,7 @@ public class Page {
 
     }
 
+    //회원가입
     private static void goToSignUp() {
         System.out.print("아이디를 입력하세요 : ");
         inputId = scanner.next();
@@ -125,7 +126,7 @@ public class Page {
         scanner = new Scanner(System.in);
         member = new Member[10];
     }
-
+    //로그인 상태 유지를 위한 중첩 클래스
     public static class User {
         public static boolean loginStatus = false;
 
