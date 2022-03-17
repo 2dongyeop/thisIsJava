@@ -1,10 +1,6 @@
 package newCode.blog.eCommerceFlatform;
-
-
 import java.util.Scanner;
-
 import java.util.*;
-
 import static newCode.blog.eCommerceFlatform.Page.member;
 
 public class Category {
