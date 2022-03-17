@@ -4,7 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class BufferdInputStreamExample {
+public class BufferedInputStreamExample {
     public static void main(String[] args) throws IOException {
         long start = 0;
         long end = 0;

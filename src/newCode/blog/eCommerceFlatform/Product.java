@@ -5,8 +5,6 @@ public class Product {
     public Product() {
     }
 
-
-
     //배열로 표현하려했을 때
     public static class books {
         private static String booksName;

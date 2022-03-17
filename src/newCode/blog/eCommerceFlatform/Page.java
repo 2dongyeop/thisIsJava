@@ -30,7 +30,7 @@ public class Page {
             member[i] = new Member("", "", "");
         }
 
-        Page.User var3 = new Page.User();
+        //Page.User var3 = new Page.User();
 
         do {
             System.out.println("미니 e커머스 플랫폼입니다. 원하시는 서비스를 이용하시려면 숫자를 입력해주세요.");
@@ -93,6 +93,7 @@ public class Page {
                 System.out.println(var10001.getNickname() + "님 로그인");
                 System.out.println("미니 e커머스 플랫폼에 오신걸 환영합니다.");
                 Page.User.loginStatus = true;
+                User.whoAmI = i;
                 break;
             }
         }
@@ -129,6 +130,7 @@ public class Page {
     //로그인 상태 유지를 위한 중첩 클래스
     public static class User {
         public static boolean loginStatus = false;
+        public static int whoAmI;
 
         public User() {
         }
