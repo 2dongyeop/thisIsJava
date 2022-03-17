@@ -6,13 +6,17 @@ public class Member {
     private String nickname;
     private int balance = 100000;
 
-    Member() {
-    }
-
     Member(String id, String password, String nickname) {
         this.id = id;
         this.password = password;
         this.nickname = nickname;
+    }
+    void minusBalance(int num) {
+        if (this.balance - num < 0) {
+            Page.errorMessage();
+        } else {
+            this.balance -= num;
+        }
     }
 
     void setId(String id) {
@@ -27,13 +31,12 @@ public class Member {
         this.nickname = nickname;
     }
 
-    void minusBalance(int num) {
-        if (this.balance - num < 0) {
-            Page.errorMessage();
-        } else {
-            this.balance -= num;
-        }
+    void setBalance(int Balance) {
+        this.balance = balance;
+    }
 
+    int getBalance() {
+        return this.balance;
     }
 
     String getId() {

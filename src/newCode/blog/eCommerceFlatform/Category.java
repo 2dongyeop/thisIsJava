@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import java.util.*;
 
+import static newCode.blog.eCommerceFlatform.Page.member;
+
 public class Category {
     private static Scanner scanner;
     public static boolean run;
@@ -51,26 +53,26 @@ public class Category {
         if (inputExample == 1) {
             for (int i = 0; i < clothesArrayList.size(); i++) {
                 Product.clothes clo = clothesArrayList.get(i);
-                System.out.println("상품 이름 : " + clothesArrayList.get(i).getClothesName());
-                System.out.println("상품 가격 : " + clothesArrayList.get(i).getClothesPrice());
-                System.out.println("상품 소개 : " + clothesArrayList.get(i).getClothesIntroduction());
+                System.out.println( (i+1) + " 번째 상품 이름 : " + clothesArrayList.get(i).getClothesName());
+                System.out.println( (i+1) + " 번째 상품 가격 : " + clothesArrayList.get(i).getClothesPrice());
+                System.out.println( (i+1) + " 번째 상품 소개 : " + clothesArrayList.get(i).getClothesIntroduction());
                 System.out.println();
             }
         } else if (inputExample == 2) {
             for (int i = 0; i < devicesArrayList.size(); i++) {
                 Product.devices dev = devicesArrayList.get(i);
-                System.out.println("상품 이름 : " + dev.getDevicesName());
-                System.out.println("상품 가격 : " + dev.getDevicesPrice());
-                System.out.println("상품 소개 : " + dev.getDevicesIntroduction());
+                System.out.println( (i+1) + " 번째 상품 이름 : " + dev.getDevicesName());
+                System.out.println( (i+1) + " 번째 상품 가격 : " + dev.getDevicesPrice());
+                System.out.println( (i+1) + " 번째 상품 소개 : " + dev.getDevicesIntroduction());
                 System.out.println();
                 i++;
             }
         } else if (inputExample == 3) {
             for (int i = 0; i < booksArrayList.size(); i++) { //Product.books books : booksArrayList
                 Product.books boo = booksArrayList.get(i);
-                System.out.println("상품 이름 : " + boo.getBooksName());
-                System.out.println("상품 가격 : " + boo.getBooksPrice());
-                System.out.println("상품 소개 : " + boo.getBooksIntroduction());
+                System.out.println( (i+1) + " 번째 상품 이름 : " + boo.getBooksName());
+                System.out.println( (i+1) + " 번째 상품 가격 : " + boo.getBooksPrice());
+                System.out.println( (i+1) + " 번째 상품 소개 : " + boo.getBooksIntroduction());
                 System.out.println();
             }
         } else {
@@ -94,10 +96,13 @@ public class Category {
             try {
                 if (inputExample == 1) {
                     System.out.println("상품의 이름을 입력하세요");
+                    System.out.print("입력 > ");
                     inputName = scanner.next();
                     System.out.println("상품의 가격을 입력하세요");
+                    System.out.print("입력 > ");
                     inputPrice = scanner.nextInt();
                     System.out.println("상품의 소개를 입력하세요");
+                    System.out.print("입력 > ");
                     inputIntroduce = scanner.next();
 
                     clothesArrayList.add(new Product.clothes(inputName, inputPrice, inputIntroduce));
@@ -109,10 +114,13 @@ public class Category {
             try {
                 if (inputExample == 2) {
                     System.out.println("상품의 이름을 입력하세요");
+                    System.out.print("입력 > ");
                     inputName = scanner.next();
                     System.out.println("상품의 가격을 입력하세요");
+                    System.out.print("입력 > ");
                     inputPrice = scanner.nextInt();
                     System.out.println("상품의 소개를 입력하세요");
+                    System.out.print("입력 > ");
                     inputIntroduce = scanner.next();
 
                     devicesArrayList.add(new Product.devices(inputName, inputPrice, inputIntroduce));
@@ -124,10 +132,13 @@ public class Category {
             try {
                 if (inputExample == 3) {
                     System.out.println("상품의 이름을 입력하세요");
+                    System.out.print("입력 > ");
                     inputName = scanner.next();
                     System.out.println("상품의 가격을 입력하세요");
+                    System.out.print("입력 > ");
                     inputPrice = scanner.nextInt();
                     System.out.println("상품의 소개를 입력하세요");
+                    System.out.print("입력 > ");
                     inputIntroduce = scanner.next();
 
                     booksArrayList.add(new Product.books(inputName, inputPrice, inputIntroduce));
@@ -147,63 +158,69 @@ public class Category {
         do {
             System.out.println("조회한 상품 중 장바구니에 추가하실 상품의 번호를 입력하세요.");
             System.out.println("1.의류 | 2.전자기기 | 3.도서");
-            System.out.print("입력> ");
+            System.out.print("입력 > ");
             int cartExample = scanner.nextInt(); //장바구니에 넣을 상품 카테고리 선택
 
-            System.out.println("장바구니에 추가 할 품목의 번호를 입력하세요.");
-            System.out.print("입력> ");
-            int inPut = (scanner.nextInt() - 1); //카테고리 내에서 장바구니에 넣을 상품 선택
-
             if (cartExample == 1) {
+                System.out.println("장바구니에 추가 할 품목의 번호를 입력하세요.");
+                System.out.print("입력 > ");
+                int inPut = (scanner.nextInt() - 1); //카테고리 내에서 장바구니에 넣을 상품 선택
+
                 Product.clothes clo = clothesArrayList.get(inPut); //옷 상품 중 해당 인덱스를 가져옴
                 clothesCart.add(clo);
                 System.out.println("장바구니에 추가되었습니다.");
                 //장바구니에 상품 추가 후 구매 여부 묻기
-                System.out.println("장바구니에 추가한 항목을 구매하시겠습니까? (yes/no)");
+                System.out.println("장바구니에 추가한 항목을 구매하시려면 숫자 1을 입력해주세요.");
                 System.out.print("입력 > ");
-                String buyYesOrNo = scanner.next();
+                int buyYesOrNo = scanner.nextInt();
 
-                if (buyYesOrNo == "yes") {
-                    buyCategoryNum = 1;
+                if (buyYesOrNo == 1) {
+                    buyCategoryNum = 1; //옷 구매 페이지로 이동
                     buyingProduct();
-                } else if (buyYesOrNo == "n") {
-                    Page.common();
                 } else {
-                    Page.errorMessage();
                     Page.common();
                 }
             } else if (cartExample == 2) {
+                System.out.println("장바구니에 추가 할 품목의 번호를 입력하세요.");
+                System.out.print("입력 > ");
+                int inPut = (scanner.nextInt() - 1); //카테고리 내에서 장바구니에 넣을 상품 선택
+
                 Product.devices dev = devicesArrayList.get(inPut); //기기 상품 중 해당 인덱스를 가져옴
                 devicesCart.add(dev);                              //가져온 품목을 장바구니에 추가
                 System.out.println("장바구니에 추가되었습니다.");
                 //장바구니에 상품 추가 후 구매 여부 묻기
-                System.out.println("장바구니에 추가한 항목을 구매하시겠습니까? (yes/no)");
+                System.out.println("장바구니에 추가한 항목을 구매하시려면 숫자 1을 입력해주세요.");
                 System.out.print("입력 > ");
-                String buyYesOrNo = scanner.next();
+                int buyYesOrNo = scanner.nextInt();
 
-                if (buyYesOrNo == "yes") {
-                    buyCategoryNum = 2;
+                if (buyYesOrNo == 1) {
+                    buyCategoryNum = 2; //전자기기 구매 페이지로 이동
                     buyingProduct();
-                } else if (buyYesOrNo == "n") {
+                } else {
                     Page.common();
                 }
             } else if (cartExample == 3) {
+                System.out.println("장바구니에 추가 할 품목의 번호를 입력하세요.");
+                System.out.print("입력 > ");
+                int inPut = (scanner.nextInt() - 1); //카테고리 내에서 장바구니에 넣을 상품 선택
+
                 Product.books boo = booksArrayList.get(inPut);     //책 상품 중 해당 인덱스르 가져옴
                 booksCart.add(boo);                                //가져온 품목을 장바구니에 추가
                 System.out.println("장바구니에 추가되었습니다.");
                 //장바구니에 상품 추가 후 구매 여부 묻기
-                System.out.println("장바구니에 추가한 항목을 구매하시겠습니까? (yes/no)");
+                System.out.println("장바구니에 추가한 항목을 구매하시려면 숫자 1을 입력해주세요.");
                 System.out.print("입력 > ");
-                String buyYesOrNo = scanner.next();
+                int buyYesOrNo = scanner.nextInt();
 
-                if (buyYesOrNo == "yes") {
-                    buyCategoryNum = 3;
+                if (buyYesOrNo == 1) {
+                    buyCategoryNum = 3; //책 구매 페이지로 이동
                     buyingProduct();
-                } else if (buyYesOrNo == "n") {
+                } else {
                     Page.common();
                 }
             } else {
                 Page.errorMessage();
+                Page.common();
             }
         } while (run);
 
@@ -215,29 +232,75 @@ public class Category {
         do {
             if (buyCategoryNum == 1) {
                 System.out.println("옷 구매 페이지로 이동합니다.");
-                for (int i = 0; i < clothesArrayList.size(); i++) {
-                    Product.clothes clo = clothesArrayList.get(i);
-                    System.out.println( i + " 번째 상품 이름 : " + clo.getClothesName());
-
+                for (int i = 0; i < clothesCart.size(); i++) {
+                    Product.clothes clo = clothesCart.get(i);
+                    System.out.println( (i+1) + " 번째 상품 이름 : " + clo.getClothesName());
                 }
+                System.out.println("조회한 품목 중 구매할 품목의 번호를 입력하세요.");
+                System.out.print("입력 > ");
+                int inPut = (scanner.nextInt() - 1); //조회한 상품들 중 구매할 상품 선택
+
+                Product.clothes clo = clothesCart.get(inPut);
+                if (clo.getClothesPrice() > member[inPut].getBalance()) { //상품 금액이 사용자의 잔액보다 클 경우
+                    System.out.println("잔액 부족");
+                    Page.errorMessage();
+                    Page.common();
+                } else {
+                    member[inPut].minusBalance(clo.getClothesPrice());    //상품 금액만큼 잔액에서 차감
+                    System.out.println("상품 금액 " + clo.getClothesPrice() + "만큼 잔액에서 차감되었습니다.");
+                    clothesCart.remove(inPut);
+                    System.out.println("장바구니 목록에서 해당 상품을 삭제합니다."); //장바구니에서 구매 상품 제외
+                    Page.common();
+                }
+
             } else if (buyCategoryNum == 2) {
                 System.out.println("전자기기 구매 페이지로 이동합니다.");
-                for (int i = 0; i < devicesArrayList.size(); i++) {
-                    Product.devices dev = devicesArrayList.get(i);
-                    System.out.println( i + " 번째 상품 이름 : " + dev.getDevicesName());
+                for (int i = 0; i < devicesCart.size(); i++) {
+                    Product.devices dev = devicesCart.get(i);
+                    System.out.println( (i+1) + " 번째 상품 이름 : " + dev.getDevicesName());
+                }
+                System.out.println("조회한 품목 중 구매할 품목의 번호를 입력하세요.");
+                System.out.print("입력 > ");
+                int inPut = (scanner.nextInt() - 1); //조회한 상품들 중 구매할 상품 선택
+
+                Product.devices dev = devicesCart.get(inPut);
+                if (dev.getDevicesPrice() > member[inPut].getBalance()) { //상품 금액이 사용자의 잔액보다 클 경우
+                    System.out.println("잔액 부족");
+                    Page.errorMessage();
+                    Page.common();
+                } else {
+                    member[inPut].minusBalance(dev.getDevicesPrice());    //상품 금액만큼 잔액에서 차감
+                    System.out.println("상품 금액 " + dev.getDevicesPrice() + "만큼 잔액에서 차감되었습니다.");
+                    devicesCart.remove(inPut);
+                    System.out.println("장바구니 목록에서 해당 상품을 삭제합니다."); //장바구니에서 구매 상품 제외
+                    Page.common();
                 }
             } else if (buyCategoryNum == 3) {
                 System.out.println("책 구매 페이지로 이동합니다.");
-                for (int i = 0; i < booksArrayList.size(); i++) {
-                    Product.books boo = booksArrayList.get(i);
-                    System.out.println( i + " 번째 상품 이름 : " + boo.getBooksName());
+                for (int i = 0; i < booksCart.size(); i++) {
+                    Product.books boo = booksCart.get(i);
+                    System.out.println( (i+1) + " 번째 상품 이름 : " + boo.getBooksName());
                 }
+                System.out.println("조회한 품목 중 구매할 품목의 번호를 입력하세요.");
+                System.out.print("입력 > ");
+                int inPut = (scanner.nextInt() - 1); //조회한 상품들 중 구매할 상품 선택
 
+                Product.books boo = booksCart.get(inPut);
+                if (boo.getBooksPrice() > member[inPut].getBalance()) { //상품 금액이 사용자의 잔액보다 클 경우
+                    System.out.println("잔액 부족");
+                    Page.errorMessage();
+                    Page.common();
+                } else {
+                    member[inPut].minusBalance(boo.getBooksPrice());    //상품 금액만큼 잔액에서 차감
+                    System.out.println("상품 금액 " + boo.getBooksPrice() + "만큼 잔액에서 차감되었습니다.");
+                    booksCart.remove(inPut);
+                    System.out.println("장바구니 목록에서 해당 상품을 삭제합니다."); //장바구니에서 구매 상품 제외
+                    Page.common();
+                }
             } else {
                 Page.errorMessage();
                 Page.common();
             }
-
         } while (run);
     }
 
