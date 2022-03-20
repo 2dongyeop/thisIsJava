@@ -32,7 +32,7 @@ public class Page {
         //Page.User var3 = new Page.User();
         do {
             System.out.println("미니 e커머스 플랫폼입니다. 원하시는 서비스를 이용하시려면 숫자를 입력해주세요.");
-            System.out.println("1.로그인 | 2.회원가입 | 3.로그아웃 | 4.상품 조회 및 등록, 구매");
+            System.out.println("1.로그인 | 2.회원가입 | 3.로그아웃 | 4.상품 관련 서비스");
             System.out.print("선택 > ");
             int select = scanner.nextInt();
 

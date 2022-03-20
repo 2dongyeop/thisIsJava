@@ -23,7 +23,7 @@ public class Category {
 
         do {
             System.out.println("상품 관련 페이지입니다. 원하시는 작업의 번호를 입력하세요.");
-            System.out.println("1.상품 조회 | 2.상품 등록 | 3.장바구니 및 구매페이지 이동");
+            System.out.println("1.상품 조회 | 2.상품 등록 | 3.장바구니 및 구매 | 4.상품 환불");
             System.out.print("선택 > ");
             int select = scanner.nextInt();
             if (select == 1) {
@@ -32,6 +32,8 @@ public class Category {
                 registerProduct();
             } else if (select == 3) {
                 additionalWork();
+            } else if (select == 4) {
+                refundProduct();
             } else {
                 Page.errorMessage();
                 Page.common();
@@ -300,6 +302,17 @@ public class Category {
         } while (run);
     }
 
+    //상품 환불 선택
+    public static void refundProduct() {
+        //환불을 하려면 구매목록을 통해 확인이 필요
+        //but 시간 관계상, 확인 작업 없이 환불 (사실상 상품 등록이랑 비슷)
+        //^^..아쉽지만 이건 추후에 보강하겠음
+        System.out.println("상품 환불 페이지 입니다.");
+        registerProduct();
+        System.out.println("상품 환불 사유는 생략합니다.");
+    }
+
+    //추가 작업
     public static void additionalWork() {
         run = true;
         do {

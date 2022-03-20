@@ -14,9 +14,17 @@ public class Member {
     void minusBalance(int num) {
         if (this.balance - num < 0) {
             Page.errorMessage();
+            Page.common();
+        } else if (num < 0) {
+            Page.errorMessage();
+            Page.common();
         } else {
             this.balance -= num;
         }
+    }
+
+    void plusBalance(int num) {
+        this.balance += num;
     }
 
     void setId(String id) {
