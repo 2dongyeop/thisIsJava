@@ -2,8 +2,9 @@ package newCode.blog.eCommerceFlatform;
 import java.util.*;
 
 public class Product {
-    public Product() {
-    }
+    public Product() {}
+    //상품의 종류에는 옷, 전자기기, 책이 있고
+    //이 들은 상품과 밀접한 관계이므로 중첩클래스로 표현함
     public static class clothes {
         private static String clothesName;
         private static int clothesPrice;
@@ -75,7 +76,6 @@ public class Product {
         }
     }
 
-    //배열로 표현하려했을 때
     public static class books {
         private static String booksName;
         private static int booksPrice;

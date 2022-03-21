@@ -29,7 +29,6 @@ public class Page {
         for(int i = 0; i < 10; ++i) {
             member[i] = new Member("", "", "");
         }
-        //Page.User var3 = new Page.User();
         do {
             System.out.println("미니 e커머스 플랫폼입니다. 원하시는 서비스를 이용하시려면 숫자를 입력해주세요.");
             System.out.println("1.로그인 | 2.회원가입 | 3.로그아웃 | 4.상품 관련 서비스");
@@ -120,8 +119,10 @@ public class Page {
         System.out.print("닉네임을 입력하세요 : ");
         inputNickname = scanner.next();
         member[memberNum].setNickname(inputNickname);
-        ++memberNum;                                    //회원가입 가능 수--
-    }
+        ++memberNum;                                    //현재 회원 수++
+                                                        //초기 설정을 배열로 한 탓에 크기에 제한
+                                                        //List를 이용해 다시 구현해 볼 것
+   }
 
     static {                                            //정적 블록으로 한번에 초기화
         scanner = new Scanner(System.in);
