@@ -39,10 +39,6 @@ public class Member {
         this.nickname = nickname;
     }
 
-    void setBalance(int Balance) {
-        this.balance = balance;
-    }
-
     int getBalance() {
         return this.balance;
     }

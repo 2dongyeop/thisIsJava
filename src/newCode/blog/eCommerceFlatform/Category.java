@@ -13,7 +13,7 @@ public class Category {
     static List<Product.clothes> clothesCart = new ArrayList<Product.clothes>();
     static List<Product.devices> devicesCart = new ArrayList<Product.devices>();
     static List<Product.books> booksCart = new ArrayList<Product.books>();
-    public static int buyCategoryNum;
+    public static int buyCategoryNum;  //구매시 카테고리 구별을 위한 상수
 
     public Category() {
     }
@@ -297,7 +297,9 @@ public class Category {
                 }
             } else {
                 Page.errorMessage();
-                Page.common();
+                //Page.common();
+                System.out.println("홈으로 이동");
+                run = false;
             }
         } while (run);
     }

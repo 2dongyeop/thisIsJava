@@ -25,7 +25,7 @@ public class Page {
 
     public static void main(String[] args) {
         run = true;
-        //NullPointerException 벙지 초기화 - 모든 필드값에 공백 대입
+        //NullPointerException 방지 초기화 - 모든 필드값에 공백 대입
         for(int i = 0; i < 10; ++i) {
             member[i] = new Member("", "", "");
         }
