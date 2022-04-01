@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class GroupingExample {
+public class GroupingByExample {
     public static void main(String[] args) {
         List<Student3> totalList = Arrays.asList(
                 new Student3("홍길동", 10, Student3.Sex.MALE, Student3.City.Seoul),
