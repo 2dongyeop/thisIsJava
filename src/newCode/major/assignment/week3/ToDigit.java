@@ -15,7 +15,8 @@ public class ToDigit {
         System.out.printf("%d", input); //10진수
         System.out.println();
 
-        System.out.printf("%h", input); //16진수
-
+        System.out.printf("%h", input);
+        System.out.println();//16진수
+        System.out.printf("%x", input);
     }
 }
