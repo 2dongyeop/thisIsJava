@@ -1,4 +1,4 @@
-package newCode.major.assignment.week5;
+package src.newCode.major.assignment.week5;
 
 import java.util.Scanner;
 
