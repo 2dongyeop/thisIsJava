@@ -1,4 +1,4 @@
-package newCode.major.assignment.week5;
+package src.newCode.major.assignment.week5;
 
 public class NumberTower {
     public static void main(String[] args) {
