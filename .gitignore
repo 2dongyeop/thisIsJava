@@ -1,7 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/java,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=java,macos
 
-.DS_Store
+# Created by https://www.toptal.com/developers/gitignore/api/macos,java
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,java
 
 ### Java ###
 # Compiled class file
@@ -58,4 +57,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.toptal.com/developers/gitignore/api/java,macos
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,java
