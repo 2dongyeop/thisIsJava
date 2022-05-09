@@ -1,4 +1,4 @@
-package newCode.major.RandomNumber;
+package src.newCode.major.RandomNumber;
 
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class RandomNumber {
 
         System.out.println("심판의 숫자가 정해졌습니다. 게임 시작");
 
-        int predictNum = 0; //예측 숫자
+        int predictNum; //예측 숫자
         int answerCount = 0; //정답 수 초기화
         for (int i = 0; i < 10; i++) { //10번의 기회
             System.out.print("예측 > ");
