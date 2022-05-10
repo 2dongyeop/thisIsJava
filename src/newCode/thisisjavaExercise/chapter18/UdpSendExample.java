@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 public class UdpSendExample {
     public static void main(String[] args) throws Exception {
         DatagramSocket datagramSocket = new DatagramSocket();
-
+/*
         System.out.println("[발신 시작]");
 
         for(int i = 1; i < 3; i++) {
@@ -22,7 +22,7 @@ public class UdpSendExample {
             datagramSocket.send(packet);
             System.out.println("[보낸 바이트 수]: " + byteArr.length + " bytes");
         }
-
+*/
         System.out.println("[발신 종료]");
 
         datagramSocket.close();
